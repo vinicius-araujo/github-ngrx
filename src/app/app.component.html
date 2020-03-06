@@ -7,4 +7,12 @@
   <button (click)='search()'>Search</button>
 </div>
 
+<main>
+  <div>
+    <div *ngIf="!((results$ | async)?.length)">
+      <span>No Results</span>
+    </div>
+  </div>
+</main>
+
 </div>

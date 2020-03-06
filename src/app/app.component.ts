@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Store } from '@ngrx/store';
 import { RootState } from './_root-store/root-state';
+import { GithubUserSearchSelectors } from './_root-store/github-search-user';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,15 @@ import { RootState } from './_root-store/root-state';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'github-ngrx';
+  public title = 'github-ngrx';
+  public results$: Observable<any[]>;
 
   constructor(private store: Store<RootState>) { }
 
   ngOnInit() {
-    this.store.select<any>('githubUserSearch').subscribe(st => {
-      console.log(st);
-    });
+    this.results$ = this.store.select(
+      GithubUserSearchSelectors.getGithubUserSearchStateResult
+    );
   }
 
   search() {

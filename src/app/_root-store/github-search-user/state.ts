@@ -1,5 +1,5 @@
 export interface State {
-    results: any;
+    results: any[];
     error: string;
     query: string | null;
     loaded: boolean;
@@ -7,10 +7,7 @@ export interface State {
 }
 
 export const initialState: State = {
-    results: [{
-        id: 'ds910ds-as8dhf',
-        text: 'Vinicius'
-    }],
+    results: [],
     query: null,
     error: null,
     loaded: false,
