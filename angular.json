@@ -5,7 +5,11 @@
   "projects": {
     "github-ngrx": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -121,10 +125,5 @@
       }
     }
   },
-  "defaultProject": "github-ngrx",
-  "schematics": {
-    "@schematics/angular:component": {
-      "styleext": "scss"
-    }
-  }
+  "defaultProject": "github-ngrx"
 }

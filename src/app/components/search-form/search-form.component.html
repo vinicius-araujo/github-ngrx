@@ -1,0 +1,23 @@
+<!-- <form [formGroup]="form" novalidate (ngSubmit)="search()">
+    <label for="query">Query</label>
+    <input type="text" class="form-control" id="query" formControlName="query"/>
+      <button type="submit">
+          <span>Search</span>
+      </button>
+</form> -->
+
+    <div class="form">
+      <form action="" [formGroup]="form" novalidate class="form__wrapper" (ngSubmit)="search()">
+        <div class="form__group">                
+            <label for="query">Query</label>
+            <div class="input__group">
+              <input type="text" tabindex="1" id="query" placeholder="Misko" class="input__field" formControlName="query">
+              <div class="form__buttons">
+                <button tabindex="2" class="btn btn--primary">
+                  Search
+                </button>
+              </div>
+            </div>
+        </div>
+      </form>
+    </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { RootState } from './_root-store/root-state';
-import { GithubUserSearchSelectors } from './_root-store/github-search-user';
+import { GithubUserSearchSelectors, GithubUserSearchActions } from './_root-store/github-search-user';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -21,7 +21,12 @@ export class AppComponent implements OnInit {
     );
   }
 
-  search() {
-    console.log('Search');
+  updateSearch({ query }) {
+    console.log(query);
+    this.store.dispatch(
+      GithubUserSearchActions.updateSearchForm({
+        searchQuery: query
+      })
+    );
   }
 }

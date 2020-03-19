@@ -1,0 +1,51 @@
+@import "./variables";
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    .input__group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .input__field {
+        font-family: $text-font-stack;
+        font-size: 1rem;
+        outline: none;
+        display: block;
+        margin-right: 1rem;
+        width: 100%;
+        min-height: 32px;
+        padding: 5px 10px;
+        border: 1px solid $border-color;
+        border-radius: 1px;
+        transition: all 0.2s linear;
+        box-shadow: $shadow;
+        &:focus {
+            border: 1px solid $border-color-focused;
+        }
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $placeholder-color;
+            opacity: 1; /* Firefox */
+        }
+    
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $placeholder-color;
+        }
+    
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color: $placeholder-color;
+        }
+        &.ng-invalid.ng-touched {
+            border: 1px solid $warning !important;
+        }
+
+    }
+}

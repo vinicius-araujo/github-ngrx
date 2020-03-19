@@ -1,0 +1,37 @@
+@import "./variables";
+
+.btn {
+    box-shadow: $shadow;
+    border-radius: 2px;
+    transition: all .2s linear;
+    padding: 0.5rem;
+    min-width: 120px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn--primary {
+    background-color: $primary-color;
+    color:$white;
+    font-size: 1rem;
+    border: none;
+    font-family: $text-font-stack;
+    &:hover {
+        background-color: $primary-color-hover;
+    }
+}
+
+.btn.loader {
+    width: inherit;
+    padding-right: 4rem;
+}
+  
+.btn.btn--disabled {
+    background-color: $disable-background;
+    color: $disable-text;
+    &:hover{
+        background-color: $disable-background;
+        color: $disable-text;
+    }
+}
