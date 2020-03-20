@@ -12,6 +12,9 @@
     <div *ngIf="!((results$ | async)?.length)">
       <span>No Results</span>
     </div>
+    <div *ngIf="(isLoading$ | async)">
+      <span>Loading</span>
+    </div>
   </div>
 </div>
 </div>

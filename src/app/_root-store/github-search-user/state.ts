@@ -1,4 +1,10 @@
-export interface State {
+import { createEntityAdapter, EntityState } from '@ngrx/entity';
+
+export const featureAdapter = createEntityAdapter<any>({
+    selectId: model => model.id
+});
+
+export interface State extends EntityState<any> {
     results: any[];
     error: string;
     query: string | null;
@@ -6,10 +12,10 @@ export interface State {
     loading: boolean;
 }
 
-export const initialState: State = {
+export const initialState: State = featureAdapter.getInitialState({
     results: [],
     query: null,
     error: null,
     loaded: false,
     loading: false,
-};
+});

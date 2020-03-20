@@ -12,12 +12,16 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit {
   public title = 'github-ngrx';
   public results$: Observable<any[]>;
+  public isLoading$: Observable<boolean>;
 
   constructor(private store: Store<RootState>) { }
 
   ngOnInit() {
     this.results$ = this.store.select(
-      GithubUserSearchSelectors.getGithubUserSearchStateResult
+      GithubUserSearchSelectors.getGithubUserSearchStateSuccess
+    );
+    this.isLoading$ = this.store.select(
+      GithubUserSearchSelectors.getGithubUserSearchStateLoading
     );
   }
 

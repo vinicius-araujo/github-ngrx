@@ -5,7 +5,7 @@ export const getGithubUserSearchState = createFeatureSelector<State>(
     'githubUserSearch'
 );
 
-export const getGithubUserSearchStateResult = createSelector(
+export const getGithubUserSearchStateSuccess = createSelector(
     getGithubUserSearchState,
     (state: State): any[] => state.results
 );
