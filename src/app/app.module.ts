@@ -7,6 +7,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { ResultListComponent } from './components/result/result-list/result-list.component';
 import { ResultItemComponent } from './components/result/result-item/result-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ResultItemComponent
   ],
   imports: [
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
     RootStoreModule
