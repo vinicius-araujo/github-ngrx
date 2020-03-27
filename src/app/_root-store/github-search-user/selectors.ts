@@ -1,13 +1,21 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { State } from './state';
+import { State, featureAdapter } from './state';
+import { GithubUserItem } from 'src/app/_models/github-search.model';
 
 export const getGithubUserSearchState = createFeatureSelector<State>(
     'githubUserSearch'
 );
 
+export const selectAllGithubUserSearchItems: (
+    state: object
+) => GithubUserItem[] = featureAdapter.getSelectors(
+    getGithubUserSearchState
+).selectAll;
+
 export const getGithubUserSearchStateSuccess = createSelector(
     getGithubUserSearchState,
-    (state: State): any[] => state.results
+    selectAllGithubUserSearchItems,
+    (state: State, items: any): GithubUserItem[] => items
 );
 
 export const getGithubUserSearchStateQuery = createSelector(

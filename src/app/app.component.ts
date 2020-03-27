@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { RootState } from './_root-store/root-state';
 import { GithubUserSearchSelectors, GithubUserSearchActions } from './_root-store/github-search-user';
 import { Observable } from 'rxjs';
+import { GithubUserItem } from './_models/github-search.model';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   public title = 'github-ngrx';
-  public results$: Observable<any[]>;
+  public results$: Observable<GithubUserItem[]>;
   public isLoading$: Observable<boolean>;
 
   constructor(private store: Store<RootState>) { }

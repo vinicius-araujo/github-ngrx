@@ -25,5 +25,13 @@ body {
         margin-top: 1rem;
         max-width: $max-width;
         margin: 0 auto;
+        top: -180px;
+        position: relative;
+        h1 { margin-bottom: 0;}
+        h3 { margin-top: 0;}
+    }
+    &--contrast {
+        min-height: 200px;
+        background-color: $secondary-color;
     }
 }

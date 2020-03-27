@@ -2,4 +2,12 @@
 
 h1 {
     font-size: 32px;
+    color: black;
+    &.contrast {
+        color: white;
+    }
+}
+
+h3.contrast {
+    color: $primary-color;
 }
