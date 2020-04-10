@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   public title = 'github-ngrx';
   public results$: Observable<GithubUserItem[]>;
   public isLoading$: Observable<boolean>;
+  public isLoaded$: Observable<boolean>;
 
   constructor(private store: Store<RootState>) { }
 
@@ -24,10 +25,13 @@ export class AppComponent implements OnInit {
     this.isLoading$ = this.store.select(
       GithubUserSearchSelectors.getGithubUserSearchStateLoading
     );
+
+    this.isLoaded$ = this.store.select(
+      GithubUserSearchSelectors.getGithubUserSearchStateLoaded
+    );
   }
 
   updateSearch({ query }) {
-    console.log(query);
     this.store.dispatch(
       GithubUserSearchActions.updateSearchForm({
         searchQuery: query

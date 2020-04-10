@@ -1,24 +1,68 @@
+.base-grid{
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
 .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #353535;
-    font-size: 3rem;
-    color: #fff;
-    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.24);
     height: 100%;
     width: 100%;
+    min-height: 150px;
     border-radius: 2px;
     transition: all 500ms;
     overflow: hidden;
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    .user__image {
+        .image-round {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: block;
+        }
+    }
+ }
+
+ .card--loading {
+    box-shadow: none;
+    opacity: 0.5;
+     p:empty {
+         width: 120px;
+         height: 1rem;
+     }
+     span:empty {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: block;
+     }
+     *:empty {
+        animation: loading 1.7s infinite linear;
+        background: #dedfe1;
+        background-image: -webkit-linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+        background-image: linear-gradient(to right, #dedfe1 0%, #f2f3f5 20%, #dedfe1 40%, #dedfe1 100%);
+        background-repeat: no-repeat;
+     }
  }
   
 .card:hover {
     box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-    // transform: translateY(-3px) scale(1.1);
  }
+
+ @keyframes loading {
+    0% {
+      background-position: -100px;
+    }
+  
+    100% {
+      background-position: 260px;
+    }
+  }

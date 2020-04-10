@@ -18,6 +18,16 @@ body {
     font-family: $text-font-stack;
 }
 
+a {
+    text-decoration: none;
+    font: inherit;
+    color: $text-color;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
 .container {
     width: 100%;
     padding: 0 1rem;
@@ -34,4 +44,11 @@ body {
         min-height: 200px;
         background-color: $secondary-color;
     }
+}
+
+.placeholder {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

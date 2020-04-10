@@ -1,3 +1,30 @@
+<div class="result-list">
+    <div *ngIf="results?.length > 0 && !isLoading">
+        <div class="base-grid">
+            <app-result-item *ngFor="let item of results" [item]="item">
+            </app-result-item>
+        </div>
+      </div>
+      <div>
+        <div *ngIf="isLoading" class="base-grid">
+            <div *ngFor="let number of loadingArray">
+                <div class="card card--loading">
+                    <div class="card__title">
+                        <div class="user__image">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="card__text">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
 <!-- <div class="base-grid">
 <div class="card">1</div>
 <div class="card">2</div>

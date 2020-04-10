@@ -8,6 +8,7 @@ import { ResultListComponent } from './components/result/result-list/result-list
 import { ResultItemComponent } from './components/result/result-item/result-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
-    RootStoreModule
+    RootStoreModule,
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
