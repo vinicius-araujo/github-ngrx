@@ -4,6 +4,6 @@ import { RouterStateUrl } from 'src/app/_models/router-state-url';
 export const routerStareKey = 'router';
 
 export interface State {
-    [routerStareKey]: RouterReducerState<RouterStateUrl>;
+    'router': RouterReducerState<RouterStateUrl>;
 }
 
