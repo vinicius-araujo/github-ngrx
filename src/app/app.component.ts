@@ -9,6 +9,7 @@ import { RouteSelector } from "./_root-store/routing-store";
 import { Observable } from "rxjs";
 import { GithubUserItem } from "./_models/github-search.model";
 import { debounceTime } from "rxjs/operators";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
   public isLoading$: Observable<boolean>;
   public isLoaded$: Observable<boolean>;
 
-  constructor(private store: Store<RootState>) {}
+  constructor(private store: Store<RootState>, private router: Router) {}
 
   ngOnInit() {
     this.results$ = this.store.select(

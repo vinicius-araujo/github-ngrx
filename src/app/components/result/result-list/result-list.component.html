@@ -1,13 +1,13 @@
 <div class="result-list">
     <div *ngIf="results?.length > 0 && !isLoading">
         <div class="base-grid">
-            <app-result-item *ngFor="let item of results" [item]="item">
+            <app-result-item *ngFor="let item of results; trackBy: trackByUser;" [item]="item">
             </app-result-item>
         </div>
       </div>
       <div>
         <div *ngIf="isLoading" class="base-grid">
-            <div *ngFor="let number of loadingArray">
+            <div *ngFor="let number of loadingArray; trackBy: trackByUser;">
                 <div class="card card--loading">
                     <div class="card__title">
                         <div class="user__image">
@@ -21,15 +21,4 @@
             </div>
         </div>
     </div>
-
 </div>
-
-
-<!-- <div class="base-grid">
-<div class="card">1</div>
-<div class="card">2</div>
-<div class="card">3</div>
-<div class="card">4</div>
-</div> -->
-
-<!-- <svg fill="none" viewBox="0 0 1440 200" width="100%" xmlns="http://www.w3.org/2000/svg" class="product-cards-blob left-0 absolute z-1"><path fill="#F05152" d="M1146.8 71.482C1268.26 75.7533 1339.4 57.5042 1440 26.5071L1440 0.250786L4.22052e-06 0.25L1.06421e-06 89.4932C102.097 139.143 257.766 217.671 396.451 194.983C545.241 170.487 618.764 46.0431 765.464 18.9165C870.697 -0.318725 1025.35 67.2106 1146.8 71.482Z"></path></svg> -->
