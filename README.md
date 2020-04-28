@@ -1,8 +1,39 @@
-⚠️ Ongoing Project.
+<p align="center">
+  <a href="https://angular.io/">
+    <img src="https://www.angularexampleapp.com/assets/images/angular.svg" alt="Logo" width=72 height=72>
+  </a>
+   <h3 align="center">Angular App using NgRx and Github API.</h3>
+</p>
 
-# GithubApi - Ngrx
+<p align="center">
+🚧 Work in Progress..
+</p>
+
+## Live demo
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/31f5a27b-5ec0-493c-88e6-7b4e62fcbf6a/deploy-status)](https://app.netlify.com/sites/vinicius-araujo-github-ngrx/deploys)
+
+## Motivation
+
+When I first start using NgRx was not that easy to find a small and complete sample. Here you'll find a sample of Angular app using NgRx and Github API, including best practices, testing and a modern CSS.
+
+## Features
+
+- ✔️ Angular 9
+- ✔️ NgRx
+- ✔️ Modern Layout.
+- 🚧 NgRx-router
+- 🚧 Testing
+
+## How to install?
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+
+1 - We are using [NPM](https://nodejs.org/en/), so please make sure you have Node installed.
+
+2 - We are using [Angular](https://angular.io/guide/setup-local) - You can install the CLI globally using `npm install -g @angular/cli`;
+
+3 - Run `npm install` to install all dependencies and start coding 🤘🏻
 
 ## Development server
 
