@@ -6,21 +6,18 @@
       <h3 class="contrast">This app uses NGRX and Github Api. Enjoy!</h3>
     </div>
   <div class="form__wrapper">
-    <app-search-form (updateSearchQuery)="updateSearch($event)">
+    <app-search-form
+    [query]="(query$ | async)"
+    (updateSearchQuery)="updateSearch($event)">
     </app-search-form>
   </div>
 
   <div class="result">
     <app-result-list 
+    [query]="(query$ | async)"
     [results]="(results$ | async)"
     [isLoading]="(isLoading$ | async)">
     </app-result-list>
-    <!-- <div *ngIf="(results$ | async)?.length > 0 ">
-      <div *ngFor="let item of (results$ | async)">
-        <span>{{item.login}}</span>
-        <span>{{item.id}}</span>
-      </div>
-    </div> -->
 
     <div *ngIf="!(isLoading$ | async) && !(isLoaded$ | async)" class="placeholder">
       <h2>Search for a github user...</h2>    

@@ -1,5 +1,14 @@
 <div class="result-list">
     <div *ngIf="results?.length > 0 && !isLoading">
+        <span>Showing results for</span>
+        <button type="button" (click)="clearSearch()" title="Clear Field" class="rounded_baloon">
+            <div class="baloon-content">
+                <span class="text">"{{query}}"</span>
+                <span class="icon">
+                    <img src="../../../../assets/close-btn.svg" width="16px" alt="Clear">
+                </span>
+            </div>
+        </button>
         <div class="base-grid">
             <app-result-item *ngFor="let item of results; trackBy: trackByUser;" [item]="item">
             </app-result-item>

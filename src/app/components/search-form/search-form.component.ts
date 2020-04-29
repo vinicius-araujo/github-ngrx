@@ -1,4 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  OnDestroy,
+  Input
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
@@ -8,9 +15,13 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit, OnDestroy {
-
   @Output()
   updateSearchQuery = new EventEmitter<any>();
+
+  @Input('query')
+  set query(value: string) {
+    this.form?.patchValue({ query: value });
+  }
 
   public form: FormGroup;
   public formSubscription: Subscription;
@@ -18,11 +29,11 @@ export class SearchFormComponent implements OnInit, OnDestroy {
     query: string;
   };
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.buildForm();
-    this.formSubscription = this.form.valueChanges.subscribe(value => {
+    this.formSubscription = this.form.valueChanges.subscribe((value) => {
       this.formValue = value;
     });
   }
@@ -42,5 +53,4 @@ export class SearchFormComponent implements OnInit, OnDestroy {
       this.formSubscription.unsubscribe();
     }
   }
-
 }

@@ -35,3 +35,28 @@
         color: $disable-text;
     }
 }
+
+.rounded_baloon {
+    margin-left: 5px;
+    background-color: $secondary-color;
+    color: #fff;
+    border-radius: 1rem;
+    border-style: none;
+    border-width: 0;
+    height: 25px;
+    cursor: pointer;
+
+    .baloon-content {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            display: inherit;
+            align-items: center;
+            margin-left: 3px;
+        }
+        .text {
+            font-weight: bold;
+        }
+    }
+}
