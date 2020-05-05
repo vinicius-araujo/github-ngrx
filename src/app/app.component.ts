@@ -10,12 +10,10 @@ import { Observable } from 'rxjs';
 import { GithubUserItem } from './_models/github-search.model';
 import {
   debounceTime,
-  switchMap,
-  concatMap,
   withLatestFrom,
   distinctUntilChanged
 } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -28,10 +26,16 @@ export class AppComponent implements OnInit {
   public isLoading$: Observable<boolean>;
   public isLoaded$: Observable<boolean>;
   public query$: Observable<string>;
+  public routeParam$: Observable<Params>;
 
   constructor(private store: Store<RootState>) {}
 
   ngOnInit() {
+    this.setUpSelectors();
+    this.setUpUrlLoading();
+  }
+
+  public setUpSelectors() {
     this.results$ = this.store.select(
       GithubUserSearchSelectors.getGithubUserSearchStateSuccess
     );
@@ -47,12 +51,11 @@ export class AppComponent implements OnInit {
       GithubUserSearchSelectors.getGithubUserSearchStateQuery
     );
 
-    this.loadUsersUrlBased();
+    this.routeParam$ = this.store.select(RouteSelector.getSelectedRouteParam);
   }
 
-  loadUsersUrlBased() {
-    this.store
-      .select(RouteSelector.getSelectedRouteParam)
+  public setUpUrlLoading() {
+    this.routeParam$
       .pipe(
         debounceTime(200),
         distinctUntilChanged(),
@@ -66,7 +69,7 @@ export class AppComponent implements OnInit {
       });
   }
 
-  updateSearch({ query }) {
+  public updateSearch({ query }) {
     this.store.dispatch(
       GithubUserSearchActions.updateSearchForm({
         searchQuery: query

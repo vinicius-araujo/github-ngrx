@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-🚧 Work in Progress..
+Enjoy!
 </p>
 
 ## Live demo
@@ -21,9 +21,9 @@ When I first start using NgRx was not that easy to find a small and complete sam
 
 - ✔️ Angular 9
 - ✔️ NgRx
-- ✔️ Modern Layout.
-- 🚧 NgRx-router
-- 🚧 Testing
+- ✔️ Modern Layout
+- ✔️ NgRx-router
+- ✔️ Testing - CR - 100%
 
 ## How to install?
 
