@@ -6,10 +6,15 @@
 </p>
 
 <p align="center">
-Enjoy!
+  <a href="https://vinicius-araujo-github-ngrx.netlify.app/">
+    <img src="https://media.giphy.com/media/L0wtCY7yxS1aqMQItF/giphy.gif" height="300px" alt="Demo example"/>
+  </a>
 </p>
 
+<p align="center">Enjoy!</p>
+
 ## Live demo
+[https://vinicius-araujo-github-ngrx.netlify.app](https://vinicius-araujo-github-ngrx.netlify.app)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/31f5a27b-5ec0-493c-88e6-7b4e62fcbf6a/deploy-status)](https://app.netlify.com/sites/vinicius-araujo-github-ngrx/deploys)
 
