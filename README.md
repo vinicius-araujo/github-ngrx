@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://angular.io/">
-    <img src="https://www.angularexampleapp.com/assets/images/angular.svg" alt="Logo" width=72 height=72>
+    <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Logo" width=72 height=72>
   </a>
    <h3 align="center">Angular App using NgRx and Github API.</h3>
 </p>
@@ -28,7 +28,7 @@ When I first start using NgRx was not that easy to find a small and complete sam
 - ✔️ NgRx
 - ✔️ Modern Layout
 - ✔️ NgRx-router
-- ✔️ Testing - CR - 100%
+- ✔️ Testing - Code Coverage - 100%
 
 ## How to install?
 
