@@ -1,25 +1,16 @@
-language: node_js
-node_js:
-  - 12
+# single test suite, non-parallel build.
+
 env:
   global:
-    - CC_TEST_REPORTER_ID=8c5b77a834fc865db1d49608c365af8067dbe198dde753304ddf9e56e1a9a8dc
-dist: trusty
-addons:
-  chrome: stable
+    - CC_TEST_REPORTER_ID=ABC123
+language: ruby
+rvm:
+  - 2.2.0
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
-
 script:
-  - ng test --watch=false --browsers=ChromeHeadless --code-coverage
-
+  - bundle exec rspec
 after_script:
-  - ./cc-test-reporter format-coverage -t lcov ./coverage/github-api/lcov.info
-  # - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
-  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
-  # - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
-notifications:
-  email: false
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
