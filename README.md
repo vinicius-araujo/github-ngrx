@@ -16,7 +16,7 @@
 ## Live demo
 [https://vinicius-araujo-github-ngrx.netlify.app](https://vinicius-araujo-github-ngrx.netlify.app)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/31f5a27b-5ec0-493c-88e6-7b4e62fcbf6a/deploy-status)](https://app.netlify.com/sites/vinicius-araujo-github-ngrx/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/31f5a27b-5ec0-493c-88e6-7b4e62fcbf6a/deploy-status)](https://app.netlify.com/sites/vinicius-araujo-github-ngrx/deploys)  [![Maintainability](https://api.codeclimate.com/v1/badges/f99927c7104678279f14/maintainability)](https://codeclimate.com/github/vinicius-araujo/github-ngrx/maintainability)  [![Test Coverage](https://api.codeclimate.com/v1/badges/f99927c7104678279f14/test_coverage)](https://codeclimate.com/github/vinicius-araujo/github-ngrx/test_coverage)
 
 ## Motivation
 
